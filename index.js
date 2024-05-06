@@ -6,7 +6,7 @@
  * 3. Make these calculations robust such that the calculation does not give an incorrect result, it throws an error to the user if something has gone wrong (parameter used with an incorrect unit of measurement, etc)
  */
 
-// Given Parameters
+// Given Parameters Initialize
 const vel = 10000; // velocity (km/h)
 const acc = 3; // acceleration (m/s^2)
 const time = 3600; // seconds (1 hour)
@@ -17,7 +17,7 @@ const fbr = 0.5; // fuel burn rate (kg/s)
 
 const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
-const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
+const newVel = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
 calcNewVel = (vel, acc, time) => { 
@@ -28,7 +28,7 @@ calcNewVel = (vel, acc, time) => {
   // Calculate new velocity in m/s
   const newVelMs = velMs + (acc * timeHours);
   // Convert new velocity from m/s to km/h
-  const newVel = newVelMs * 3600 / 1000;
+  const newVel = newVelMs * 3600 / 1000; // ensure that all the units are consistent and the calculations are accurate.
   return newVel;
 }
 
