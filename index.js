@@ -27,7 +27,7 @@ const newVel = calcNewVel(vel, acc, time) //calculates new velocity based on acc
 const d2 = d + ((vel*time)/3600) // calculates new distance based on velocity
 
 const rf = ((fbr*time)*1.78) // calculates remaining fuel based on fuel burn rate
-
+// 1.78 is a conversion factor used to convert the fuel burn rate from kg/s to kg/h. 
 
 // Log the results 
 console.log(`Corrected New Velocity: ${newVel} km/h`);
