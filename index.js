@@ -26,7 +26,8 @@ const newVel = calcNewVel(vel, acc, time) //calculates new velocity based on acc
 
 const d2 = d + ((vel*time)/3600) // calculates new distance based on velocity
 
-const rf = (fbr*time) //calculates remaining fuel
+const rf = ((fbr*time)*1.78) // calculates remaining fuel based on fuel burn rate
+
 
 // Log the results 
 console.log(`Corrected New Velocity: ${newVel} km/h`);
