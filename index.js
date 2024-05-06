@@ -9,15 +9,7 @@
 // Pick up an error with how the function below is called and make it robust to such errors
 // Define the calcNewVel function
 const calcNewVel = (vel, acc, time) => { 
-    // Convert velocity from km/h to m/s
-    const velMs = vel * 1000 / 3600;
-    // Convert time from seconds to hours
-    const timeHours = time / 3600;
-    // Calculate new velocity in m/s
-    const newVelMs = velMs + (acc * timeHours);
-    // Convert new velocity from m/s to km/h
-    const newVel = newVelMs * 3600 / 1000; // ensure that all the units are consistent and the calculations are accurate.
-    return newVel;
+   return vel + ((acc*time)*3.6); //converts velocity to m/s and time to hours
   }
 
 
