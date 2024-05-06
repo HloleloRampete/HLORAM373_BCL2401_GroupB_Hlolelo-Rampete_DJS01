@@ -14,23 +14,25 @@ const d = 0; // distance (km)
 const fuel = 5000; // remaining fuel (kg)
 const fbr = 0.5; // fuel burn rate (kg/s)
 
+// Pick up an error with how the function below is called and make it robust to such errors
+calcNewVel = (vel, acc, time) => { 
+    // Convert velocity from km/h to m/s
+    const velMs = vel * 1000 / 3600;
+    // Convert time from seconds to hours
+    const timeHours = time / 3600;
+    // Calculate new velocity in m/s
+    const newVelMs = velMs + (acc * timeHours);
+    // Convert new velocity from m/s to km/h
+    const newVel = newVelMs * 3600 / 1000; // ensure that all the units are consistent and the calculations are accurate.
+    return newVel;
+  }
+
+// Calculate new velocity
+const vel2 = calcNewVel(vel, acc, time) //calculates new velocity based on acceleration
 
 const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
-const newVel = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
 
-// Pick up an error with how the function below is called and make it robust to such errors
-calcNewVel = (vel, acc, time) => { 
-  // Convert velocity from km/h to m/s
-  const velMs = vel * 1000 / 3600;
-  // Convert time from seconds to hours
-  const timeHours = time / 3600;
-  // Calculate new velocity in m/s
-  const newVelMs = velMs + (acc * timeHours);
-  // Convert new velocity from m/s to km/h
-  const newVel = newVelMs * 3600 / 1000; // ensure that all the units are consistent and the calculations are accurate.
-  return newVel;
-}
 
 console.log(`Corrected New Velocity: ${vel2} km/h`);
 console.log(`Corrected New Distance: ${d2} km`);
