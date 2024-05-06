@@ -7,6 +7,7 @@
  */
 
 // Pick up an error with how the function below is called and make it robust to such errors
+// Define the calcNewVel function
 const calcNewVel = (vel, acc, time) => { 
     // Convert velocity from km/h to m/s
     const velMs = vel * 1000 / 3600;
@@ -28,13 +29,14 @@ const d = 0; // distance (km)
 const fuel = 5000; // remaining fuel (kg)
 const fbr = 0.5; // fuel burn rate (kg/s)
 
-// Calculate new velocity
+
 const newVel = calcNewVel(vel, acc, time) //calculates new velocity based on acceleration
 
 const d2 = d + (vel*time) //calcultes new distance
+
 const rf = fbr*time //calculates remaining fuel
 
-
+// Log the results 
 console.log(`Corrected New Velocity: ${newVel} km/h`);
 console.log(`Corrected New Distance: ${d2} km`);
 console.log(`Corrected Remaining Fuel: ${rf} kg`);
