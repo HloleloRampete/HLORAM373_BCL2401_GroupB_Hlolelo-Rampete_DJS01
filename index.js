@@ -35,6 +35,6 @@ const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
 
 
-console.log(`Corrected New Velocity: ${vel2} km/h`);
+console.log(`Corrected New Velocity: ${newVel} km/h`);
 console.log(`Corrected New Distance: ${d2} km`);
 console.log(`Corrected Remaining Fuel: ${rf} kg`);
