@@ -1,7 +1,7 @@
 /**
  * Debugging Guide
  * 1. Make the code more readable
- * 2. Pick up calculation errors - in the 'calcNewVel' function, the velocity is given in km/h, but the acceleration is given in m/s^2, and the time is given in seconds. 
+ * 2. Pick up calculation errors - in the 'calcNewVel' function, the velocity is given in km/h, but the acceleration is given in m/s, and the time is given in seconds. 
  * To make the calculation consistent, you'll need to convert the velocity to m/s and the time to hours.
  * 3. Make these calculations robust such that the calculation does not give an incorrect result, it throws an error to the user if something has gone wrong (parameter used with an incorrect unit of measurement, etc)
  */
