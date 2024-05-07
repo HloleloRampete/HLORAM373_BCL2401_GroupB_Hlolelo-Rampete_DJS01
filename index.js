@@ -8,7 +8,19 @@
 
 // Pick up an error with how the function below is called and make it robust to such errors
 // Define the calcNewVel function
-const calcNewVel = (vel, acc, time) => { 
+const calcNewVel = (vel, acc, time) => {
+    // Check if the velocity is negative
+  if (vel < 0) {
+    throw new Error('Velocity cannot be negative');
+  }
+  // Check if the acceleration is negative
+  if (acc < 0) {
+    throw new Error('Acceleration cannot be negative');
+  }
+  // Check if the time is negative
+  if (time < 0) {
+    throw new Error('Time cannot be negative');
+  } 
    return vel + ((acc*time)*3.6); // 3.6 is the conversion factor from m/s to km/h
   }
 
